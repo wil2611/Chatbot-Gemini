@@ -1,0 +1,100 @@
+.say-hello {
+  display: grid;
+}
+.say-hello-text {
+  grid-column: 2;
+}
+.say-hello-img {
+  grid-column: 1;
+  display: flex;
+}
+.say-hello-img img {
+  align-self: center;
+}
+.finny-bot {
+  width: 100%;
+  height: auto;
+}
+
+.conversations {
+  padding-bottom: 62px;
+}
+.conversations-message {
+  padding: 10px;
+  max-width: 80%;
+  border-radius: 40px;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+.conversations-prompt {
+  margin-left: auto;
+  background: #c2a5d84d;
+  color: white;
+}
+.conversations-response {
+  color: #fff;
+  background: #00c9d8;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.prompt-area {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.prompt-form {
+  display: flex;
+  flex-flow: row nowrap;
+  background: #c77dff47;
+}
+.prompt-input {
+  flex-grow: 9;
+  margin-right: 20px;
+  padding: 20px;
+  border: none;
+  background: transparent !important;
+}
+.prompt-input:focus-visible {
+  border-color: #6f6bf8;
+}
+.prompt-send-button {
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 62px;
+  width: 62px;
+  background: #c77dff;
+  font-size: 1.4em;
+  outline: transparent;
+  border-color: transparent;
+  border-radius: 30px;
+  padding: 0;
+  color: white;
+}
+
+.loader {
+  width: 60px;
+  aspect-ratio: 4;
+  background: radial-gradient(circle closest-side, #00c9d8 90%, #0000) 0 /
+    calc(100% / 3) 100% space;
+  clip-path: inset(0 100% 0 0);
+  animation: l1 1s steps(4) infinite;
+}
+@keyframes l1 {
+  to {
+    clip-path: inset(0 -34% 0 0);
+  }
+}
+
+.chatbot-emoji {
+  align-self: self-start;
+  margin-top: 16px;
+  margin-right: 8px;
+}
+
+.markdown p {
+  margin-top: 0;
+  margin-bottom: 0;
+}

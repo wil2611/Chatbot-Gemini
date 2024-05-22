@@ -1,0 +1,46 @@
+<div class="say-hello">
+  <div class="say-hello-img">
+    <img
+      class="finny-bot"
+      ngSrc="https://i.ibb.co/S7ptrVJ/finny-bot-without-bg.png"
+      alt="FinnyBot"
+      height="1024"
+      width="1024"
+    />
+  </div>
+
+  <div class="say-hello-text">
+    <h4>¡Estoy acá para ayudarte!</h4>
+
+    <h4>Has tu pregunta sobre el material que deseas</h4>
+  </div>
+</div>
+<section class="conversations">
+  @for (response of responses(); track response.text) {
+
+    <div class="conversations-message"
+          [ngClass]="response.type === 'RESPONSE' ? 'conversations-response' : 'conversations-prompt'">
+      @if(response.type === 'RESPONSE') {
+        <span
+          class="chatbot-emoji">
+        🤖
+      </span>
+      }
+      <markdown class="markdown" [data]="response.text"></markdown>
+    </div>
+  } @empty {
+    <p>No hay mensajes.</p>
+  }
+
+@if(status === 'PROCESSING') {
+    <p class="loader"></p>
+}
+</section>
+
+
+<section class="prompt-area">
+<form class="prompt-form" (ngSubmit)="sendMessage($event)">
+  <input class="prompt-input" type="text" placeholder="Inserta tu pregunta aqui...." [formControl]="promptText">
+  <button [disabled]="promptText.value === ''" class="prompt-send-button">▶</button>
+</form>
+</section>
